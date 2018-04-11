@@ -1,0 +1,187 @@
+/* Mise en page des blocs:"bloc_page, conteneur_principal, header, figure, section, et les 3 articles (.son_experience, .ses_competences, .sa_formation). */
+
+* {
+  margin: 0;
+  padding: 0;
+} /* Réinitialisation des marges par défaut et les valeurs de remplissage de tous les éléments HTML */
+
+#bloc_page /* Page entière, contien la bande et le conteneur principal*/
+{
+	display: flex; /* Propriété flex */
+	flex-direction: row-reverse; /* direction du contenu pour le flex */	
+}
+
+#conteneur_principal /* Conteneur du header et de la section */
+{
+	display: flex; /* Propriété flex */
+	flex-direction: column; /* direction du contenu pour le flex */
+	flex: 10; /* Possibilité d'étirement par rapport au header */
+	overflow: auto;
+}
+
+header /* Balise contenant le titre h1, le sous-titre, et la photo (figure) */
+{
+	display: flex; /* Propriété flex */
+	justify-content: space-between; /* Positionement du contenu */
+	align-items: center; /* Alignement du contenu */
+	height: 30%; /* Hauteur relative */
+	background-color: rgba(248, 219, 180, 0.8); /* Couleur et opacité de l'arrière-plan */
+	border-radius: 20px; /* arondi des angles de la boîte */
+	box-shadow: 6px 6px 20px black; /* Ombre des boîtes */
+	border: 5px white solid; /* Contour */
+	margin: 0px 50px; /* Marges extérieures */
+	flex: 1; /* Possibilité d'étirement vertical par rapport à la section à l'interieur su conteneur_principal */
+	overflow: auto;
+}
+
+figure /* balises contenant la photo */
+{	
+	width: 10%; /* largeur relative */
+	flex: 1;
+}
+
+section /* Balise contenant les 3 articles */
+{
+	display: flex; /* Propriété flex */
+	justify-content: space-between; /* Positionement du contenu */
+	align-items: center; /* Alignement du contenu */
+	margin: 0px 40px; /* Marges extérieures */
+	flex: 2.5; /* Possibilité d'étirement par rapport au header */
+	overflow: auto;	
+}
+
+.son_experience, .ses_competences, .sa_formation /* Balises contenant les paragraphes de texte, ainsi que les titres h2 */
+{
+	display: flex; /* Propriété flex */
+	flex-direction: column; /* direction du contenu pour le flex */
+	border: 5px white solid; /* Contour */
+	border-radius: 20px; /* arondi des angles de la boîte */
+	height: 60%; /* Hauteur relative */
+	width: 25%; /* largeur relative */
+	background-color: rgba(249, 195, 210, 0.8); /* Couieur et opacité de l'arrière-plan */
+	box-shadow: 6px 6px 20px black; /* Ombre des boîtes */
+	align-items: center; /* Alignement du contenu */
+	padding: 20px; /* Marges intérieures */
+	margin: 0px 10px; /* Marges extérieures */
+	overflow: auto; /* gestion automatique du débordement du contenu */
+}
+
+.son_experience 
+{
+	margin-top: 50px; /* Marge supérieure pour créer un effet de décalage avec les autres paragraphes */
+}
+
+.sa_formation 
+{
+	margin-bottom: 50px; /* Marge inférieure pour créer un effet de décalage avec les autres paragraphes */
+}
+
+.bande /* Bande de gauche contenant la citation */
+{
+	display: flex; /* Propriété flex */
+	width: 10%; /* largeur relative */
+	height: 935px; /* hauteur fixe */
+	align-items: center; /* Alignement du contenu */
+	border-radius: 20px; /* Arondi des angles */
+	border: 5px pink solid; /* Contour */
+	background-color: black; /* Couleur de l'arrière-plan */
+	opacity: 0.85; /* Opacité */
+	flex: 1; /* Possibilité d'étirement par rapport au conteneur_principal */
+	overflow: auto;
+}
+
+/* Mise en page des textes, des images et déffinition des polices */
+
+/* En général */
+
+@font-face {
+	font-family: 'blackjack';
+	src: url('font/blackjack-webfont.eot');
+	src: url('font/blackjack-webfont.eot?#iefix') format('embedded-opentype'),
+	 	 url('font/blackjack-webfont.woff') format('woff'),
+		 url('font/blackjack-webfont.ttf') format('truetype'),
+		 url('font/blackjack-webfont.svg#blackjack') format('svg');
+} /* définition d'un nouveau nom de police, nommée blackjack */
+
+body
+{
+	font-size: 1.2em; /* Taille générale du texte de la page */
+	background-color: rgba(248, 219, 180, 0.8); /* couleur de l'arrière plan */
+	background-image: url("img/fleurs_fond.jpg"); /* Intégraion d'une image sur l'arrière-plan */
+	background-repeat: no-repeat; /* pas de répétition de l'image d'arrière-plan */
+	background-position: center; /* Positionement de l'image d'arière_plan */
+}
+
+strong
+{
+	color: #A51934; /* Couleur du texte strong */
+}
+
+/* Dans le Header */
+.photo
+{
+	box-shadow: 6px 6px 20px black; /* Ombre portée de la photo */
+	border: 5px white solid; /* Cadre de la photo */
+}
+
+.legende /* Légende de la photo de profil */
+{
+	font-size: 0.73em; /* Taille du texte */
+}
+
+h1
+{
+	font-family: 'blackjack', Arial, serif; /* utilisation de la police définie plus haut avec 2 polices de secour */
+	font-size: 9em; /* Taille du titre h1 */
+	color: #F42194; /* Couleur du titre h1 */
+	text-align: center; /* Alignement du titre h1 */
+	text-shadow: 10px 10px 10px white; /* Ombre portée du texte */
+	width: 30%; /* largeur relative */
+	margin-left: 20px;
+	flex: 1;
+}
+
+.sous-titre
+{
+	color: #A51934; /* Couleur du texte */
+	font-size: 1.5em; /* Taille du texte */
+	font-style: italic; /* Mise en italique du texte */
+	text-align: center; /* Alignement du texte */
+	text-shadow: 5px 5px 5px white; /* Ombre portée du texte */
+	flex: 5; /* Largeur de la boîte en pourcentage */
+	display: flex; /* Propriété flex */
+	justify-content: left; /* Positionement du contenu */
+	align-self: flex-end; /* Alignement de la boîte */
+}
+
+/* Dans la bade de gauche */
+
+.citation
+{
+	text-align: center; /* Alignement de texte */
+	color: pink; /* Couleur */
+	opacity: 0.6; /* Opacité */
+	font-size: 1.5em; /* Taille du texte */
+	font-style: italic; /* Mise en italique du texte */
+	margin: 20px; /* Marge extérieure relative */
+}
+
+/* Dans la section */
+h2
+{
+	font-size: 2em; /* Taille du titre h2 */
+	color: #A51934; /* Couleur du titre h2 */
+	text-align: center; /* Alignement de texte */
+	height: 20%; /* Hauteur relative */
+	margin-top: 10px; /* Marge extérieure supérieure */
+	margin-bottom: 5px; /* Marge extérieure inférieure */
+	flex: 1; /* Possibilité d'étirement par rapport au bloc texte */
+}
+
+.exp, .comp, .form /* textes des articles, hors titres h2 */
+{
+	color: #424242; /* Couleur du texte */
+	flex: 8; /* Possibilité d'étirement par rapport au bloc h2 */
+	margin-top: 50px; /* Marge extérieure supérieure */
+	text-align: justify; /* Alignement de texte */
+}
